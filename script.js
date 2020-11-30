@@ -1,29 +1,33 @@
-function odd_even(){
-
-         let number=(document.getElementById("inputnum").value);
-
-       
 
 
-if(number % 2 === 0){
+var arr = [];
+var even = [];
+var odd  = [];
 
+function addRoll(){
 
-    document.getElementById("result").innerHTML="<h1>Even Number</h1>";
-
-
-
+         let number=parseInt((document.getElementById("inputnum").value));
+        arr.push(number);
+console.log("all numbers==>",arr);
+        document.getElementById("result").innerHTML=arr;
 }
 
-else{
-    document.getElementById("result").innerHTML="<h1>Odd Number</h1>";
+function arrange(){
 
-
-
-
-}
-
-
-
+    for (let i = 0 ; i<arr.length ; i++){
+ 
+        if (arr[i] % 2 === 0)
+        {
+            even.push(arr[i])
+        }
+        else {
+                    odd.push(arr[i]);
+        }
+    }
+    // console.log("even values ===>",even);
+    // console.log("odd values ===>",odd);
+       document.getElementById("even").innerHTML=even;
+       document.getElementById("odd").innerHTML=odd;
 
 
 }
